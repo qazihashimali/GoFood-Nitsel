@@ -4,10 +4,10 @@ import GoFoodsLocateUs from "../Components/Gofoodslocateus";
 
 const StoreLocator = () => {
   return (
-    <>
+    <div className="pt-5 md:pt-0">
       <GoFoodsStoreLocator />
       <GoFoodsLocateUs />
-    </>
+    </div>
   );
 };
 

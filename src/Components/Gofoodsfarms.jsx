@@ -52,11 +52,11 @@ export default function GoFoodsFarms() {
         </div>
 
         {/* Step Labels */}
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 px-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 px-2">
           {supplySteps.map((step, i) => (
             <p
               key={i}
-              className="text-gray-700 text-sm leading-snug text-center"
+              className="text-gray-700 text-xs sm:text-sm leading-relaxed text-center px-2"
             >
               {step}
             </p>

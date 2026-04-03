@@ -10,7 +10,7 @@ import BreadSection from "../Components/BreadSection";
 
 const Products = () => {
   return (
-    <>
+    <div className="pt-5 md:pt-0">
       <ProductSection />
       <BreadSection />
       <EggsSection />
@@ -19,7 +19,7 @@ const Products = () => {
       <ButterSection />
       <KulfiSection />
       <ContactSection />
-    </>
+    </div>
   );
 };
 

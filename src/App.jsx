@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
 import GoFoodsFooter from "./Components/Gofoodsfooter";
@@ -8,11 +8,29 @@ import AboutUs from "./Pages/AboutUs";
 import StoreLocator from "./Pages/StoreLocator";
 import Careers from "./Pages/Careers";
 import ContactUs from "./Pages/ContactUs";
+import Loader from "./Components/Loader";
 
 const App = () => {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 400); // small smooth delay
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
   return (
     <div>
+      {loading && <Loader />}
+
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -21,6 +39,7 @@ const App = () => {
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<ContactUs />} />
       </Routes>
+
       <GoFoodsFooter />
     </div>
   );

@@ -5,11 +5,11 @@ import GoFoodsFarms from "../Components/Gofoodsfarms";
 
 const AboutUs = () => {
   return (
-    <>
+    <div className="pt-5 md:pt-0">
       <GoFoodsAbout />
       <GoFoodsObjectivePromise />
       <GoFoodsFarms />
-    </>
+    </div>
   );
 };
 
